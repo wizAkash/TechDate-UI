@@ -5,6 +5,7 @@ const Feed = () => {
     return (
         <>
             <h1>Welcome, on board! {user.firstName}</h1>
+            <h2> Your lastname is : {user.lastName}</h2>
         </>
     );
 }

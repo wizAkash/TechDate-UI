@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Footer from "./Footer";
 
 const Body = () => {
     const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const Body = () => {
         <>
             <NavBar/>
             {user ? <Outlet/> : <p>Loading...</p>}
+            <Footer/>
         </>
     );
 }

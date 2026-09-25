@@ -15,7 +15,6 @@ const Feed = () => {
         try{
             const res = await axios.get(BASE_URL+'/user/feed', {withCredentials: true});
             dispatch(addFeed(res.data.data));
-
             console.log("User Feed : " + res.data.data);
         } catch(err) {
             console.log(err?.response?.message);
@@ -32,11 +31,13 @@ const Feed = () => {
                 <h1>Welcome, {user.firstName} {user.lastName}</h1>
                 <h2>This is your feed!</h2>
             </div>
-            {
-                feed && <div className='flex justify-center m-10'>
+            <div className='flex justify-center m-10'>
+                {feed ? (
                     <UserCard user = {feed[0]}/>
-                </div>
-            }
+                ) : (
+                    <UserCard/>
+                )}
+            </div>
         </>
     );
 }
